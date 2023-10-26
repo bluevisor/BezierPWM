@@ -49,6 +49,10 @@ void BezierPWM::breathOut(int startValue, int endValue, unsigned long duration) 
     bezierFade(curve, startValue, endValue, duration);
 }
 
+void BezierPWM::linear(int startValue, int endValue, unsigned long duration) {
+    float curve[] = {0, 0, 1, 1};
+    bezierFade(curve, startValue, endValue, duration);
+}
 
 
 float BezierPWM::cubicBezier(float t, float p0, float p1, float p2, float p3) {
