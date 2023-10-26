@@ -67,6 +67,7 @@ pwm.bezierFade(customPoints, 1, 0, 2000); // Using custom control points, fade f
 ```
 
 ### Planned updates
+- Add linear option
 - Breath light similar to [this](https://avital.ca/notes/a-closer-look-at-apples-breathing-light)
 
 ### Contributing
