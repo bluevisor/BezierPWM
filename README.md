@@ -1,6 +1,6 @@
 # Arduino LED Fader using SoftPWM and Bezier Curves
 
-This project is an extension of the [SoftPWM Library](https://github.com/bhagman/SoftPWM) to control the brightness of an LED on an Arduino. It allows for more complex, non-linear fading through the use of cubic Bezier curves.
+This project is an extension of the [SoftPWM Library](https://github.com/bhagman/SoftPWM) to control the brightness of an LED on an Arduino. It allows for more complex, non-linear fading through the use of cubic Bezier curves. Works on any pin, including the built-in LED.
 
 ## Features
 
