@@ -4,7 +4,7 @@ This project is an extension of the [SoftPWM Library](https://github.com/bhagman
 
 ## Features
 
-- Non-linear LED fading
+- Non-linear LED fading on any pin
 - Customizable Bezier curves for intricate light effects
 - Predefined easing functions like easeIn, easeOut, easeInOut
 - Highly customizable with options for initial and target brightness, total fade time, and more
