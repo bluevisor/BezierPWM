@@ -25,10 +25,10 @@ $ git clone https://github.com/bluevisor/BezierPWM.git
 
 The BezierPWM library comes with four predefined curves that you can use for smooth fading transitions:
 
-- ease
-- easeIn
-- easeOut
-- easeInOut
+- ease (0.25, 0.1, 0.25, 1)
+- easeIn (0.42, 0, 1, 1)
+- easeOut (0, 0, 0.58, 1)
+- easeInOut (0.42, 0, 0.58, 1)
 
 ```cpp
 #include "BezierPWM.h"
