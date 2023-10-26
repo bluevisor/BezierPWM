@@ -16,6 +16,8 @@ public:
     void easeIn(int startValue, int endValue, unsigned long duration);
     void easeOut(int startValue, int endValue, unsigned long duration);
     void easeInOut(int startValue, int endValue, unsigned long duration);
+    void breathIn(int startValue, int endValue, unsigned long duration);
+    void breathOut(int startValue, int endValue, unsigned long duration);
 
     // Public method to get the PWM pin
     int getPWMPin();
