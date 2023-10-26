@@ -1,59 +1,76 @@
-# Arduino SoftPWM with Custom Bezier Curves
+# Arduino LED Fader using SoftPWM and Bezier Curves
 
-This project is an enhancement of the existing SoftPWM library. It includes support for cubic Bezier curves to create custom fade-in and fade-out effects for LEDs.
+This project is an extension of the [SoftPWM Library](https://github.com/bhagman/SoftPWM) to control the brightness of an LED on an Arduino. It allows for more complex, non-linear fading through the use of cubic Bezier curves. Works on any pin, including the built-in LED.
 
 ## Features
 
-- Supports predefined Bezier curves for common easing effects:
-  - Ease
-  - Ease In
-  - Ease Out
-  - Ease In Out
-- Accepts custom control points for personalized Bezier curves.
-- Supports initial and target brightness parameters.
-- Variable total time for fade-in and fade-out effects.
+- Linear and non-linear LED fading
+- Customizable Bezier curves for intricate light effects
+- Predefined easing functions like easeIn, easeOut, easeInOut
+- Highly customizable with options for initial and target brightness, total fade time, and more
 
-## Installation
+### Installation
 
-1. Download the SoftPWM library.
-2. Copy the library to your Arduino `libraries` folder.
+1. Clone or download the BezierPWM library repository to your local machine.
+
+```shell
+$ git clone https://github.com/bluevisor/BezierPWM.git
+```
+2. Open the Arduino IDE.
+3. Go to `Sketch` -> `Include Library` -> `Add .ZIP Library` and select the downloaded repository.
 
 ## Usage
 
-Include the library at the top of your script:
+### Predefined Curves
 
-```arduino
-#include "SoftPWM.h"
-```
+The BezierPWM library comes with four predefined curves that you can use for smooth fading transitions:
 
-Initialize the SoftPWM library in the `setup` function:
+- ease (0.25, 0.1, 0.25, 1)
+- easeIn (0.42, 0, 1, 1)
+- easeOut (0, 0, 0.58, 1)
+- easeInOut (0.42, 0, 0.58, 1)
 
-```arduino
+```cpp
+#include "BezierPWM.h"
+
+BezierPWM pwm(13); // Create an instance of BezierPWM with the default pin 13
+
 void setup() {
-  SoftPWMBegin();
-  SoftPWMSet(13, 0); // Pin, Initial brightness
+    SoftPWMBegin();
+    SoftPWMSet(pwm.getPWMPin(), 0); // Initialize SoftPWM with the pin from your BezierPWM instance
+}
+
+void loop() {
+    // Using predefined curve "ease," fade from 0 to 1 in 1 second
+    pwm.ease(0, 1, 1000);
+    
+    // Using predefined curve "easeIn," fade from 1 to 0 in 1 second
+    pwm.easeIn(1, 0, 1000);
+    
+    delay(500);
+    
+    // Using predefined curve "easeOut," fade from 0 to 1 in 1 second
+    pwm.easeOut(0, 1, 1000);
+    
+    // Using predefined curve "easeInOut," fade from 1 to 0 in 2 seconds
+    pwm.easeInOut(1, 0, 2000);
+    
+    delay(500);
 }
 ```
 
-Use the `bezierFade` function in your loop or other parts of the program:
-
-### Predefined Curves
-
-```arduino
-bezierFade(easeIn, 0, 1, 1000);  // Ease in from 0 to 1 in 1 second (1000ms)
-```
-
 ### Custom Curves
-
-```arduino
+You can also create custom curves by defining your control points:
+```cpp
 float customPoints[] = {0.2, 0.1, 0.6, 0.9};
-bezierFade(customPoints, 1, 0, 2000);  // Custom curve from 1 to 0 in 2 seconds (2000ms)
+pwm.bezierFade(customPoints, 1, 0, 2000); // Using custom control points, fade from 1 to 0 in 2 seconds
 ```
 
-## Contributing
+### Contributing
+We welcome contributions from the community! If you find issues, have feature requests, or want to contribute code, please follow our Contribution Guidelines.
 
-Feel free to contribute to the project by opening issues or pull requests.
+### License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
 
-## License
-
-This project is licensed under the MIT License.
+### Acknowledgements
+SoftPWM library for Arduino: https://github.com/bhagman/SoftPWM
