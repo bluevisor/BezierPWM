@@ -66,6 +66,10 @@ float customPoints[] = {0.2, 0.1, 0.6, 0.9};
 pwm.bezierFade(customPoints, 1, 0, 2000); // Using custom control points, fade from 1 to 0 in 2 seconds
 ```
 
+### Planned Updates
+- Add linear option
+- Breath lights
+
 ### Contributing
 We welcome contributions from the community! If you find issues, have feature requests, or want to contribute code, please follow our Contribution Guidelines.
 
