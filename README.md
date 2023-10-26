@@ -67,7 +67,9 @@ pwm.bezierFade(customPoints, 1, 0, 2000); // Using custom control points, fade f
 ```
 
 ### Planned updates
-- Breath light similar to [this](https://avital.ca/notes/a-closer-look-at-apples-breathing-light)
+- Add linear option
+- Add more predefined curves such as easeSineIn, easeSineOut
+- Add breath light similar to [this](https://avital.ca/notes/a-closer-look-at-apples-breathing-light)
 
 ### Contributing
 We welcome contributions from the community! If you find issues, have feature requests, or want to contribute code, please follow our Contribution Guidelines.
