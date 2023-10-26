@@ -119,4 +119,5 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ### Links
 SoftPWM library for Arduino: https://github.com/bhagman/SoftPWM
+
 Online visualizer for Bézier curve: https://cubic-bezier.com/
