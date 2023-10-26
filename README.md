@@ -4,12 +4,12 @@ This project is an extension of the [SoftPWM Library](https://github.com/bhagman
 
 ## Features
 
-- Linear and non-linear LED fading
+- Non-linear LED fading on any pin
 - Customizable Bezier curves for intricate light effects
-- Predefined easing functions like easeIn, easeOut, easeInOut
+- Predefined easing functions like easeIn, easeOut, easeInOut, and more
 - Highly customizable with options for initial and target brightness, total fade time, and more
 
-### Installation
+## Installation
 
 1. Clone or download the BezierPWM library repository to your local machine.
 
@@ -25,10 +25,17 @@ $ git clone https://github.com/bluevisor/BezierPWM.git
 
 The BezierPWM library comes with four predefined curves that you can use for smooth fading transitions:
 
-- ease (0.25, 0.1, 0.25, 1)
-- easeIn (0.42, 0, 1, 1)
-- easeOut (0, 0, 0.58, 1)
-- easeInOut (0.42, 0, 0.58, 1)
+- ease: Smooth ease curve.
+- easeIn: Ease-in curve.
+- easeOut: Ease-out curve.
+- easeInOut: Ease-in-out curve.
+- easeSine: Sine-like ease curve.
+- easeSineIn: Sine-like ease-in curve.
+- easeSineOut: Sine-like ease-out curve.
+- easeSineInOut: Sine-like ease-in-out curve.
+- breathIn: Natural human breathing in curve.
+- breathOut: Natural human breathing out curve.
+- linear: Straight line.
 
 ```cpp
 #include "BezierPWM.h"
@@ -56,7 +63,40 @@ void loop() {
     pwm.easeInOut(1, 0, 2000);
     
     delay(500);
+
+    // Using predefined curve "easeSine," fade from 0 to 1 in 1 second
+    pwm.easeSine(0, 1, 1000);
+
+    // Using predefined curve "easeSineIn," fade from 1 to 0 in 1 second
+    pwm.easeSineIn(1, 0, 1000);
+
+    delay(500);
+
+    // Using predefined curve "easeSineOut," fade from 0 to 1 in 1 second
+    pwm.easeSineOut(0, 1, 1000);
+
+    // Using predefined curve "easeSineInOut," fade from 1 to 0 in 2 seconds
+    pwm.easeSineInOut(1, 0, 2000);
+
+    delay(500);
+
+    // Using predefined curve "breathIn," fade from 0 to 1 in 2 seconds
+    pwm.breathIn(0, 1, 2000);
+
+    // Using predefined curve "breathOut," fade from 1 to 0 in 2 seconds
+    pwm.breathOut(1, 0, 2000);
+
+    delay(500);
+
+    // Using predefined curve "linear," fade from 0 to 1 in 1 second
+    pwm.linear(0, 1, 1000);
+
+    // Using predefined curve "linear," fade from 1 to 0 in 1 second
+    pwm.linear(1, 0, 1000);
+
+    delay(500);
 }
+
 ```
 
 ### Custom Curves
