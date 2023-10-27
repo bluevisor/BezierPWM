@@ -23,7 +23,7 @@ $ git clone https://github.com/bluevisor/BezierPWM.git
 
 ### Predefined Curves
 
-The BezierPWM library comes with four predefined curves that you can use for smooth fading transitions:
+The BezierPWM library comes with predefined Bézier curves that you can use for smooth fading transitions:
 
 - ease
 - easeIn
