@@ -25,17 +25,17 @@ $ git clone https://github.com/bluevisor/BezierPWM.git
 
 The BezierPWM library comes with four predefined curves that you can use for smooth fading transitions:
 
-- ease: Smooth ease curve.
-- easeIn: Ease-in curve.
-- easeOut: Ease-out curve.
-- easeInOut: Ease-in-out curve.
-- easeSine: Sine-like ease curve.
-- easeSineIn: Sine-like ease-in curve.
-- easeSineOut: Sine-like ease-out curve.
-- easeSineInOut: Sine-like ease-in-out curve.
-- breathIn: Natural human breathing in curve.
-- breathOut: Natural human breathing out curve.
-- linear: Straight line.
+- ease
+- easeIn
+- easeOut
+- easeInOut
+- easeSine
+- easeSineIn
+- easeSineOut
+- easeSineInOut
+- breathIn
+- breathOut
+- linear
 
 ```cpp
 #include "BezierPWM.h"
